@@ -14,6 +14,11 @@
     align-items: center;
 }
 
+.profile-content__element img:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
 .profile {
     background-color: #faf8f8;
     width: 100%;
