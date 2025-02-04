@@ -19,12 +19,24 @@
     width: 100%;
 }
 
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #000024;
+    }
+    50% {
+        box-shadow: 0 0 20px #000024;
+    }
+    100% {
+        box-shadow: 0 0 5px #000024;
+    }
+}
+
 .person-logo {
     border: 4px solid black;
     border-radius: 50%;
-    margin: 15px 0px 15px 0px;
-    width: 20%;
-    animation: glow 3s ease alternate;
+    margin: 95px 0px 0px 0px;
+    width: 65%;
+    animation: glow 3s ease infinite;
 }
 
 .profile-content {
