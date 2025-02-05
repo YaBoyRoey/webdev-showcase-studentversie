@@ -12,6 +12,19 @@ body {
 
 .person-name {
     color: antiquewhite;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 55px #ff00ff, 0 0 75px #ff00ff;
+    margin-top: 10px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 55px #ff00ff, 0 0 75px #ff00ff;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff;
+    }
 }
 
 .personalia {
@@ -22,6 +35,8 @@ body {
     align-items: center;
     height: 424px;
     transition: height 0.5s cubic-bezier(.63,.12,0,.91);
+    border-radius: 15px;
+    margin-right: 10px;
 }
 
 .personalia:hover {
@@ -36,6 +51,7 @@ body {
 .profile {
     background-color: #0D235F;
     width: 100%;
+    border-radius: 15px;
 }
 
 @keyframes glow {
@@ -57,7 +73,7 @@ body {
 .person-logo {
     border: 4px solid black;
     border-radius: 50%;
-    margin: 50px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
     width: 40%;
     animation: glow 3s ease infinite;
 }
@@ -164,6 +180,17 @@ body {
         color: #5c6166;
         display: flex;
     }
+
+    .hidden-text {
+        display: none;
+        color: antiquewhite;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 150px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
 }
 
 

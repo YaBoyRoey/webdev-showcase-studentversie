@@ -109,5 +109,34 @@
 
         </section>
 
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const personalia = document.querySelector(".personalia");
+
+                const text = document.createElement("p");
+                text.classList.add("hidden-text");
+                text.innerText = "Animation Completed!";
+                personalia.appendChild(text);
+
+                personalia.addEventListener("transitionend", function (event) {
+                    if (event.propertyName === "height") {
+                        if (personalia.offsetHeight === 853) {
+                            text.style.display = "block";
+                            setTimeout(() => {
+                                text.style.opacity = "1";
+                            }, 50);
+                        } else {
+                            text.style.opacity = "0";
+                            setTimeout(() => {
+                                text.style.display = "none";
+                            }, 500);
+                        }
+                    }
+                });
+            });
+        </script>
+
+
+
     </section>
 </div>
