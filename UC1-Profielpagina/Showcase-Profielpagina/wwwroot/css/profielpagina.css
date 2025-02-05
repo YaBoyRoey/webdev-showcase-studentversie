@@ -1,17 +1,31 @@
 ﻿/*mobile version*/
 
+body {
+    background-color: #090F1F;
+}
+
 .page {
     display: flex;
     flex-direction: column;
     font-family: Arial;
 }
 
+.person-name {
+    color: antiquewhite;
+}
+
 .personalia {
-    background-color: #e7e8ec;
+    background-color: #101D42;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 424px;
+    transition: height 0.5s cubic-bezier(.63,.12,0,.91);
+}
+
+.personalia:hover {
+    height: 853px;
 }
 
 .profile-content__element img:hover {
@@ -20,27 +34,31 @@
 }
 
 .profile {
-    background-color: #faf8f8;
+    background-color: #0D235F;
     width: 100%;
 }
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 5px #000024;
+        box-shadow: 0 0 5px white;
     }
     50% {
-        box-shadow: 0 0 20px #000024;
+        box-shadow: 0 0 20px white;
     }
     100% {
-        box-shadow: 0 0 5px #000024;
+        box-shadow: 0 0 5px white;
     }
+}
+
+.profile-content__description {
+    color: antiquewhite;
 }
 
 .person-logo {
     border: 4px solid black;
     border-radius: 50%;
-    margin: 95px 0px 0px 0px;
-    width: 65%;
+    margin: 50px 0px 0px 0px;
+    width: 40%;
     animation: glow 3s ease infinite;
 }
 
@@ -50,7 +68,7 @@
     border-radius: 8px;
     width: 100%;
     max-width: 600px;
-    background-color: #f9f9f9;
+    background-color: #101D42;
     margin: 0px 0px 20px 0px
 }
 
@@ -73,7 +91,11 @@
 }
 
 .profile-content__category-title {
-    color: rgba(39, 140, 39, 0.96);
+    color: antiquewhite;
+}
+
+.profile-content__title {
+    color: gray;
 }
 
 .profile-content__category--hidden-mobile {
@@ -103,7 +125,7 @@
 }
 
 .profile-content__institute {
-    color: rgba(39, 140, 39, 0.96);
+    color: antiquewhite;
     margin-top: 0px;
     font-size: 14px;
 }
