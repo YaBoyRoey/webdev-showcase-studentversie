@@ -22,6 +22,7 @@
 .gdpr-consent__description{
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .gdpr-consent__choice{
@@ -56,3 +57,12 @@
     display: block;
 }
 
+.content-gdpr-not-chosen
+{
+    color: white;
+}
+
+#content-gpdr-consent-status
+{
+    color: white;
+}
