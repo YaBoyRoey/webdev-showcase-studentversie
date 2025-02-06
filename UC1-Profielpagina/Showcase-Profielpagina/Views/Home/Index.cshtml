@@ -8,6 +8,9 @@
         <img class="person-logo" src="images/person-pasfoto.png">
         <h1 class="person-name">Roey Langbroek</h1>
 
+        <div class="arrow"></div>
+        <div class="arrow-text">Zet je muis op me!</div>
+
     </section>
 
     <section class="profile">
@@ -23,7 +26,7 @@
                 <div class="profile-content__element-header">
                 </div>
                 <p class="profile-content__description">
-                    Als programmeur ben ik bekwaam in het realiseren van bruikbare applicaties.
+                    Welkom op mijn profiel, wat leuk dat je er bent!
                 <p>
             </div>
 
@@ -92,16 +95,18 @@
                     </div>
                     <div class="skills-container">
                         <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank">
-                            <img class="C#_logo" src="images/C_sharp.png" alt="C#" title="C#" style="width:55px; height:62px; margin-right:10px" />
+                            <img class="C#_logo" src="images/C_sharp.png" alt="C#" title="C#" style="width:55px; height:62px; margin-right:10px; margin-top: 6px;" />
                         </a>
                         <a href="https://isocpp.org/" target="_blank">
-                            <img class="C++_logo" src="images/C_pp.png" alt="C++" title="C++" style="width:55px; height:62px; margin-right:10px" />
+                            <img class="C++_logo" src="images/C_pp.png" alt="C++" title="C++" style="width:55px; height:62px; margin-right:10px; margin-top: 6px;" />
                         </a>
-                        <a href="https://www.php.net/" target="_blank">
-                            <img class="PHP_logo" src="images/PHP.png" alt="PHP" title="PHP" style="width:62px; height:62px; margin-right:2px" />
+                    </div>
+                    <div class="skills-container2">
+                        <a href="https://www.php.net/" target="_blank" style="text-decoration: none; color: inherit;" onmouseover="this.style.color='blue';" onmouseout="this.style.color='inherit';">
+                            <img class="PHP_logo" src="images/PHP.png" alt="PHP" title="PHP" style="width:62px; height:62px; margin-right:-3px; margin-left: -3px; margin-top: 9px;" />
                         </a>
                         <a href="https://www.java.com/" target="_blank">
-                            <img class="Java_logo" src="images/Java.png" alt="Java" title="Java" style="width:62px; height:62px;" />
+                            <img class="Java_logo" src="images/Java.png" alt="Java" title="Java" style="width:62px; height:62px; margin-top: 9px;" />
                         </a>
                     </div>
                 </div>
@@ -115,28 +120,27 @@
 
                 const text = document.createElement("p");
                 text.classList.add("hidden-text");
-                text.innerText = "Animation Completed!";
+                text.innerHTML = "Als programmeur ben ik bekwaam in het ontwikkelen en implementeren van functionele en efficiënte applicaties die voldoen aan de behoeften van gebruikers.<br><br>Ik heb ervaring met het ontwerpen van gebruiksvriendelijke interfaces, het schrijven van goed gestructureerde code en het optimaliseren van prestaties.<br><br>Daarnaast ben ik in staat om problemen snel te analyseren en op te lossen, waardoor ik stabiele en betrouwbare software kan opleveren.";
                 personalia.appendChild(text);
 
+                personalia.addEventListener("transitionstart", function (event) {
+                    if (event.propertyName === "height" && personalia.offsetHeight !== 823) {
+                        text.style.opacity = "0";
+                        text.style.display = "none";
+                    }
+                });
+
                 personalia.addEventListener("transitionend", function (event) {
-                    if (event.propertyName === "height") {
-                        if (personalia.offsetHeight === 853) {
-                            text.style.display = "block";
-                            setTimeout(() => {
-                                text.style.opacity = "1";
-                            }, 50);
-                        } else {
-                            text.style.opacity = "0";
-                            setTimeout(() => {
-                                text.style.display = "none";
-                            }, 500);
-                        }
+                    if (event.propertyName === "height" && personalia.offsetHeight === 823) {
+                        text.style.display = "block";
+                        setTimeout(() => {
+                            text.style.opacity = "1";
+                        }, 50);
                     }
                 });
             });
+
         </script>
-
-
 
     </section>
 </div>
