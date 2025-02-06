@@ -150,6 +150,16 @@ body {
     font-size: 14px;
 }
 
+.hidden-text {
+    display: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 135px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
 @media only screen and (min-width: 800px) {
 
     .page {
