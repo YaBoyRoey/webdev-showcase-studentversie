@@ -202,7 +202,7 @@ body {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 20px solid #ff00ff;
+    border-bottom: 20px solid antiquewhite;
     animation: bounce 2s infinite;
 }
 
@@ -211,7 +211,7 @@ body {
     top: 260px;
     left: 7%;
     transform: translateX(-20%);
-    color: #ff00ff;
+    color: antiquewhite;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
