@@ -33,7 +33,6 @@
 }
 
 .gdpr-consent__button--accept {
-    background-color: #d5f5d5;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid gray;
@@ -47,6 +46,10 @@
     padding: 10px;
     border-radius: 10px;
     border: 1px solid gray;
+}
+
+.gdpr-consent__button--reject:hover {
+    background-color: #c5e3c5;
 }
 
 .hide{
