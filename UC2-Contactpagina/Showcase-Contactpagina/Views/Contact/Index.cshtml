@@ -8,7 +8,7 @@
 
         <h1>Contact</h1>
         <p>@ViewBag.Message</p>
-        <form method="post" class="form-contactpagina">
+        <form class="form-contactpagina" method="post" action="/contact">
             @Html.AntiForgeryToken()    
             <div class="form-contactpagina__inputelement fx-col">
                 <label for="firstname">Voornaam: </label>
@@ -40,6 +40,7 @@
                 <input type="text" asp-for="Message" name="message" id="message">
             </div>
 
+            <div class="g-recaptcha" data-sitekey="6Leo9uAqAAAAAJ6l4SVxtEi2fzGmdMD-V_728tXe"></div>
             <div class="form-contactpagina__inputelement">
                 <input type="submit" value="Verstuur!">
             </div>
@@ -101,11 +102,21 @@
        // Valideer alle velden voor de zekerheid
        validateForm();
 
+       // Valideer reCAPTCHA
+       const recaptchaResponse = grecaptcha.getResponse();
+       if (!recaptchaResponse) {
+           alert("Please complete the reCAPTCHA.");
+           return;
+       }
+
        // Verkrijg CSRF-token van het formulier
        const csrfToken = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
        // Serialiseer formuliergegevens
-       const formData = new URLSearchParams(new FormData(form));
+       const formData = new FormData(form);
+
+       // Voeg reCAPTCHA response toe aan form data
+       formData.append('gRecaptchaResponse', recaptchaResponse);
 
        // Voeg CSRF-token toe (alleen als het nog niet bestaat)
        if (!formData.has('__RequestVerificationToken')) {
@@ -115,10 +126,7 @@
        // Voer een POST-verzoek uit
        fetch('/contact', {
            method: 'POST',
-           headers: {
-               'Content-Type': 'application/x-www-form-urlencoded' // Stel de inhoudstype in
-           },
-           body: formData // Stuur de geserialiseerde formuliergegevens als de body
+           body: formData
        })
            .then(response => {
                if (!response.ok) {
@@ -140,3 +148,4 @@
            });
    });
 </script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
