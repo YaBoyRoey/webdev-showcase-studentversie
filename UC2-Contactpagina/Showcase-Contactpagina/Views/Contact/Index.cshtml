@@ -6,7 +6,9 @@
 <div class="page">
     <section class="contact">
 
-        <h1>Contact</h1>
+        <h1>Contacteer mij!</h1>
+        <h2>Roey Langbroek</h2>
+        <h3>s1204257@student.windesheim.nl</h3>
         <p>@ViewBag.Message</p>
         <form class="form-contactpagina" method="post" action="/contact">
             @Html.AntiForgeryToken()    
@@ -39,7 +41,6 @@
                 <label for="message">Bericht: </label>
                 <textarea asp-for="Message" name="message" id="message" rows="5"></textarea>
             </div>
-
 
             <div class="g-recaptcha" data-sitekey="6Leo9uAqAAAAAJ6l4SVxtEi2fzGmdMD-V_728tXe"></div>
 
