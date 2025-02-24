@@ -88,7 +88,10 @@
        // Serialiseer formuliergegevens
        const formData = new URLSearchParams(new FormData(form));
 
-       formData.append('__RequestVerificationToken', csrfToken); // Voeg CSRF-token toe
+       // Voeg CSRF-token toe (alleen als het nog niet bestaat)
+       if (!formData.has('__RequestVerificationToken')) {
+           formData.append('__RequestVerificationToken', csrfToken);
+       }
 
        // Voer een POST-verzoek uit
        fetch('/contact', {
