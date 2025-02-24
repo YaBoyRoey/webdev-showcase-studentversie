@@ -48,6 +48,10 @@
 
         </form>
 
+        <div id="success-message" class="success-message" style="display:none;">
+            <p>Formulier succesvol ingediend!</p>
+        </div>
+
     </section>
 </div>
 
@@ -140,15 +144,14 @@
            .then(data => {
                // Verwerk succesvolle formulierinzending
                console.log('Formulier succesvol ingediend:', data);
-               // Optioneel: je kunt hier een redirect uitvoeren of een succesbericht tonen
+               document.getElementById('success-message').style.display = 'block';
+               form.reset();
            })
            .catch(error => {
                console.error('Er was een probleem met de formulierinzending:', error);
                alert(error.message);
-               // Verwerk fouten hier
            });
    });
 
-    </script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer>
-    </script>
+</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
