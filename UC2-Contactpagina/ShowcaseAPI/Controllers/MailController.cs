@@ -26,7 +26,7 @@ namespace ShowcaseAPI.Controllers
             var mailMessage = new MailMessage(fromAddress, toAddress)
             {
                 Subject = form.Subject,
-                Body = $"{form.Message} \nTelefoonnummer: {form.Phone}",
+                Body = $"{form.Message} \n\nMet vriendelijke groeten,\n{form.FirstName} {form.LastName}\n\nTelefoonnummer: {form.Phone}",
                 IsBodyHtml = false
             };
 
