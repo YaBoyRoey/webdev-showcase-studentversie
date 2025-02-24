@@ -19,5 +19,13 @@ namespace ShowcaseAPI.Models
         [Required]
         [Phone]
         public string Phone { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string Subject { get; set; }
+
+        [Required]
+        [StringLength(600)]
+        public string Message { get; set; }
     }
 }

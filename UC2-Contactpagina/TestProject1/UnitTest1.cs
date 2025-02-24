@@ -19,7 +19,9 @@ namespace ShowcaseAPI.Tests
                 FirstName = "John",
                 LastName = "Doe",
                 Email = "john.doe@example.com",
-                Phone = "1234567890"
+                Phone = "1234567890",
+                Subject = "Hallo",
+                Message = "Dit is een testbericht"
             };
 
             // Act

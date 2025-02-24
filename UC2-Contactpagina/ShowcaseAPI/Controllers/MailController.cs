@@ -13,7 +13,7 @@ namespace ShowcaseAPI.Controllers
     {
         // POST api/<MailController>
         [HttpPost]
-        public ActionResult Post([Bind("FirstName, LastName, Email, Phone")] Contactform form)
+        public ActionResult Post([Bind("FirstName, LastName, Email, Phone, Subject, Message")] Contactform form)
         {
             var client = new SmtpClient("sandbox.smtp.mailtrap.io", 2525)
             {
@@ -25,8 +25,8 @@ namespace ShowcaseAPI.Controllers
             var fromAddress = new MailAddress(form.Email, $"{form.FirstName} {form.LastName}");
             var mailMessage = new MailMessage(fromAddress, toAddress)
             {
-                Subject = "Contact Form Submission",
-                Body = $"Name: {form.FirstName} {form.LastName}\nEmail: {form.Email}\nPhone: {form.Phone}",
+                Subject = form.Subject,
+                Body = $"{form.Message} \nTelefoonnummer: {form.Phone}",
                 IsBodyHtml = false
             };
 

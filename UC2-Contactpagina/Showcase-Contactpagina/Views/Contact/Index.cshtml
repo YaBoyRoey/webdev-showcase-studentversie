@@ -9,7 +9,7 @@
         <h1>Contact</h1>
         <p>@ViewBag.Message</p>
         <form method="post" class="form-contactpagina">
-            @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken()    
             <div class="form-contactpagina__inputelement fx-col">
                 <label for="firstname">Voornaam: </label>
                 <input type="text" asp-for="FirstName" name="firstname" id="firstname" required>
@@ -28,6 +28,16 @@
             <div class="form-contactpagina__inputelement fx-col">
                 <label for="phone">Telefoonnummer: </label>
                 <input type="tel" asp-for="Phone" name="phone" id="phone">
+            </div>
+
+            <div class="form-contactpagina__inputelement fx-col">
+                <label for="subject">Onderwerp: </label>
+                <input type="text" asp-for="Subject" name="subject" id="subject">
+            </div>
+
+            <div class="form-contactpagina__inputelement fx-col">
+                <label for="message">Bericht: </label>
+                <input type="text" asp-for="Message" name="message" id="message">
             </div>
 
             <div class="form-contactpagina__inputelement">
